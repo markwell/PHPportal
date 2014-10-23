@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+   <head>
+	  <meta charset="utf-8">
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <title>Bootstrap Template</title>
+	  <!-- Bootstrap -->
+	  <link href="css/bootstrap.css" rel="stylesheet">
+	  <link href="css/style.css" rel="stylesheet">
+	  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	  <!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.pond/xs.42/respond.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.pond/xs.42/respond.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.pond/xs.42/respond.min.js"></script>
+	  <![endif]-->
+   </head>
+   <body>
+   	<!-- Адаптивная навигация по сайту -->
+   	<div class="container">
+   		<div class="row">
+		<div class="navbar navbar-inverse navbar-fixed-top">
+		 <div class="container">
+			<div class="navbar-header">
+			   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
+			   <span class="sr-only"></span>
+			   <span class="icon-bar"></span>
+			   <span class="icon-bar"></span>
+			   <span class="icon-bar"></span>
+			   </button>
+			   <a href="#" class="navbar-brand">Логотип</a>
+			</div>
+			<div class="collapse navbar-collapse" id="responsive-menu">
+			   <ul class="nav navbar-nav">
+				  <li><a href="#">Пункт1</a></li>
+				  <li class="dropdown">
+					 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Пункт2<b class="caret"></b></a>
+					 <ul class="dropdown-menu">
+						<li><a href="#">Пункт1</a></li> 
+						<li><a href="#">Пункт2</a></li>
+						<li><a href="#">Пункт3</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Пункт4</a></li>
+					 </ul>
+				  </li>
+				  <li><a href="#">Пункт3</a></li>
+			   </ul>
+			</div>
+		 </div>
+		</div>
+	    </div>
+	</div>
+
+	<!-- Карусель(слайдер) -->
+	<div id="carousel" class="carousel slide">
+
+	  	<!-- Индикаторы слайдов -->
+	  	<ol class="carousel-indicators">
+	  		<li class="active" data-target="#carousel" data-slide-to="0"></li>
+	  		<li data-target="#carousel" data-slide-to="1"></li>
+	  		<li data-target="#carousel" data-slide-to="2"></li>
+	  	</ol>
+
+	  	<!-- Слайды -->
+	  	<div class="carousel-inner">
+	  		<div class="item active">
+	  			<img src="images/1.jpg" alt="">
+	  			<div class="carousel-caption">
+	  				<h3>Первый слайд</h3>
+	  				<p>Описание первого слайда</p>
+	  			</div>
+	  		</div>
+	  		<div class="item">
+	  			<img src="images/2.jpg" alt="">
+	  			<div class="carousel-caption">
+	  				<h3>Второй слайд</h3>
+	  				<p>Описание второго слайда</p>
+	  			</div>
+	  		</div>
+	  		<div class="item">
+	  			<img src="images/3.jpg" alt="">
+	  			<div class="carousel-caption">
+	  				<h3>Третий слайд слайд</h3>
+	  				<p>Описание третьего слайда</p>
+	  			</div>
+	  		</div>
+	  	</div>	
+	
+
+	  	<!-- Стрелки переключения слайдов -->
+	  		<a href="#carousel" class="left carousel-control" data-slide="prev">
+	  			<span class="glyphicon glyphicon-chevron-left"></span>
+	  		</a>
+	  		<a href="#carousel" class="right carousel-control" data-slide="next">
+	  			<span class="glyphicon glyphicon-chevron-right"></span>
+	  		</a>
+		</div>
+
+		<br><br><br><br>
+
+	<!-- Основной контент сайта -->
+		<div class="container">
+		 <div class="row">
+		   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+		   	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi sunt, dolorem corporis blanditiis quisquam nisi itaque at cum harum odit, laboriosam, nostrum optio veritatis dolores obcaecati fugiat aut eaque. Laboriosam!
+		   </div>
+		   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+		   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti debitis eveniet dolorum ducimus modi odit iusto cupiditate, consequuntur sit neque magnam deserunt expedita in officiis, quam culpa odio, hic soluta.
+			</div>
+		   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+		   	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium earum reprehenderit, tenetur iste recusandae quasi. Beatae incidunt mollitia ut, quam nobis ea eligendi numquam consectetur, ab corrupti neque, vel facilis.
+		   	<p><i class="glyphicon glyphicon-heart"></i></p>
+
+		   </div>
+		 </div>
+		</div>
+
+		<br><br><br><br>
+
+
+	<!-- Форма входа или регистрации -->
+	<div class="container">
+		 <div class="row">
+		<form class="form-horizontal" role="form">
+		  <div class="form-group">
+		    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+		    <div class="col-sm-10">
+		      <input type="email" class="form-control" id="inputEmail3"  placeholder="Email">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+		    <div class="col-sm-10">
+		      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <div class="col-sm-offset-2 col-sm-10">
+		      <div class="checkbox">
+		        <label>
+		          <input type="checkbox"> Запомнить меня
+		        </label>
+		      </div>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <div class="col-sm-offset-2 col-sm-10">
+		      <button type="submit" class="btn btn-default">Регистрация</button>
+		    </div>
+		  </div>
+		    </div>
+		  </div>
+		</form>
+
+		<br><br><br><br>
+
+
+	<!-- Footer -->
+		<div class="container">
+			<div class="row">
+				<div class="panel-footer">
+					<ul class="list-inline">
+						<li><span class="divider"></span><a href="register.php">Регистрация</a></li>
+						<li><span class="divider"></span><a href="#">Авторизация</a></li>
+						<li><span class="divider"></span><a href="#">Выход</a></li>
+					</ul>
+				</div>
+			</div>
+	    </div>	  	  
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	  <!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/bootstrap.js"></script>
+
+	<!-- Скрипт автоматической прокрутки слайдера-to -->
+		<script type='text/javascript'>
+    	$(document).ready(function() {
+         $('.carousel').carousel({
+             interval: 3000
+         })
+    		});    
+    	</script>﻿
+	 
+   </body>
+</html>
