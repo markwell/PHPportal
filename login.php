@@ -53,25 +53,11 @@ if(isset($_POST['submit']))
 
         $hash = md5(generateCode(10));
 
-            
-
-        if(!@$_POST['not_attach_ip'])
-
-        {
-
-            # Если пользователя выбрал привязку к IP
-
-            # Переводим IP в строку
-
-            $insip = ", user_ip=INET_ATON('".$_SERVER['REMOTE_ADDR']."')";
-
-        }
-
         
 
         # Записываем в БД новый хеш авторизации и IP
 
-        mysql_query("UPDATE users SET user_hash='".$hash."' ".$insip." WHERE user_id='".$data['user_id']."'");
+        mysql_query("UPDATE users SET user_hash='".$hash."' WHERE user_id='".$data['user_id']."'");
 
         
 
