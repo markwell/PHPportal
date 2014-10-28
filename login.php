@@ -24,11 +24,17 @@ function generateCode($length=6) {
 
 
 
-# Соединямся с БД
+# Соединяемся с БД
 
-mysql_connect('localhost','root','');
-
-mysql_select_db("users");
+try {  
+  $DBH = new PDO("mysql:host=localhost;dbname=users", 'root', '');  
+  $DBH->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );  
+  // $DBH->prepare('SELECT user_login FROM users')->execute();  
+}  
+catch(PDOException $e) {  
+    echo "Houston, we have a problem.";  
+    file_put_contents('PDOErrors.txt', $e->getMessage(), FILE_APPEND);  
+}
 
 
 if(isset($_POST['submit']))
@@ -37,10 +43,9 @@ if(isset($_POST['submit']))
 
     # Вытаскиваем из БД запись, у которой логин равняеться введенному
 
-    $query = mysql_query("SELECT user_id, user_password FROM users WHERE user_login='".mysql_real_escape_string($_POST['login'])."' LIMIT 1");
+    $STH = $DBH->query("SELECT user_id, user_password FROM users WHERE user_login='".$_POST['login']."' LIMIT 1");
 
-    $data = mysql_fetch_assoc($query);
-
+    $STH->setFetchMode(PDO::FETCH_ASSOC);
     
 
     # Соавниваем пароли
@@ -55,7 +60,7 @@ if(isset($_POST['submit']))
 
         
 
-        # Записываем в БД новый хеш авторизации и IP
+        # Записываем в БД новый хеш авторизации 
 
         mysql_query("UPDATE users SET user_hash='".$hash."' WHERE user_id='".$data['user_id']."'");
 
