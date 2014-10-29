@@ -44,7 +44,9 @@ if(isset($_POST['submit']))
 
     # проверяем, не сущестует ли пользователя с таким именем
 
-    $query = mysql_query("SELECT COUNT(user_id) FROM users WHERE user_login='".mysql_real_escape_string($_POST['login'])."'");
+    $query = $DBH->prepare("SELECT COUNT(user_id) FROM users WHERE user_login=:user_login");
+    $query->bindParam("user_login", $_POST['login']);
+    $result = $query->fetchAll();
 
     if(mysql_result($query, 0) > 0)
 

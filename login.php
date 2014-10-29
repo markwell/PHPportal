@@ -5,7 +5,7 @@
 
 
 # Функция для генерации случайной строки
-
+$error = "";
 function generateCode($length=6) {
 
     $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIFJKLMNOPRQSTUVWXYZ0123456789";
@@ -24,7 +24,7 @@ function generateCode($length=6) {
 
 
 
-# Соединяемся с БД
+# Соединямся с БД
 
 try {  
   $DBH = new PDO("mysql:host=localhost;dbname=users", 'root', '');  
@@ -43,9 +43,10 @@ if(isset($_POST['submit']))
 
     # Вытаскиваем из БД запись, у которой логин равняеться введенному
 
-    $STH = $DBH->query("SELECT user_id, user_password FROM users WHERE user_login='".$_POST['login']."' LIMIT 1");
+    $query = mysql_query("SELECT user_id, user_password FROM users WHERE user_login='".$_POST['login']."' LIMIT 1");
 
-    $STH->setFetchMode(PDO::FETCH_ASSOC);
+    $data = mysql_fetch_assoc($query);
+
     
 
     # Соавниваем пароли
@@ -84,11 +85,10 @@ if(isset($_POST['submit']))
     else
 
     {
-
-        print "You have entered the wrong login / password";
+        $error = "Неправильный пароль";
 
     }
 
 }
-
+        include "login.html";
 ?>
